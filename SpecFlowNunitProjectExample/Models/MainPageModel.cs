@@ -16,64 +16,64 @@ namespace SpecFlowNunitProjectExample.Models
 
         public void ShowAllOfThemClick()
         {
-            Driver.FindElement(By.XPath("//li[@class='category-3517']//label[@class='open-categories']")).Click(); ;
+            Driver.FindElementXPath("//li[@class='category-3517']//label[@class='open-categories']").Click(); ;
         }
 
         public void IsVisibleVehicleCategory(string catName)
         {
-            string result = Driver.ElementIsVisible(By.XPath("//a[contains(text(),'"+ catName +"')]"),10);
+            string result = Driver.ElementIsVisible(By.XPath("//a[contains(text(),'"+ catName +"')]"),5);
             Assert.IsNull(result, "Element bulunamadı");
         }
 
         public void IsVisibleRealEstateCategory(string catName)
         {
-            string result = Driver.ElementIsVisible(By.XPath("//a[contains(text(),'" + catName + "')]"), 10);
+            string result = Driver.ElementIsVisible(By.XPath("//a[contains(text(),'" + catName + "')]"), 5);
             Assert.IsNull(result, "Element bulunamadı");
         }
 
         public void IsVisibleLogo()
         {
-            Assert.IsTrue(Driver.FindElement(By.XPath("//a[@class='logo']")).Displayed, "Logo not found!");
+            Assert.IsTrue(Driver.FindElementXPath("//a[@class='logo']").Displayed, "Logo not found!");
         }
 
         public void IsVisibleDetailSearch()
         {
-            Assert.IsTrue(Driver.FindElement(By.XPath("//a[contains(text(),'Detaylı Arama')]")).Displayed, "Detail Search not found!");
+            Assert.IsTrue(Driver.FindElementXPath("//a[contains(text(),'Detaylı Arama')]").Displayed, "Detail Search not found!");
         }
 
         public void IsVisibleSignIn()
         {
-            Assert.IsTrue(Driver.FindElement(By.XPath("//a[@id='secure-login']")).Displayed, "Sign In not found!");
+            Assert.IsTrue(Driver.FindElementXPath("//a[@id='secure-login']").Displayed, "Sign In not found!");
         }
 
         public void IsVisibleSignOut()
         {
-            Assert.IsTrue(Driver.FindElement(By.XPath("//li[@class='register-text']/a")).Displayed, "Sign Out not found!");
+            Assert.IsTrue(Driver.FindElementXPath("//li[@class='register-text']/a").Displayed, "Sign Out not found!");
         }
 
         public void IsVisibleFreeAdv()
         {
-            Assert.IsTrue(Driver.FindElement(By.XPath("//a[@id='post-new-classified']")).Displayed, "Free Advertise not found!");
+            Assert.IsTrue(Driver.FindElementXPath("//a[@id='post-new-classified']").Displayed, "Free Advertise not found!");
         }
 
         public void IsVisibleSearchBar()
         {
-            Assert.IsTrue(Driver.FindElement(By.XPath("//input[@id='searchText']")).Displayed, "Search Bar not found!");
+            Assert.IsTrue(Driver.FindElementXPath("//input[@id='searchText']").Displayed, "Search Bar not found!");
         }
 
         public void SearchBarClick()
         {
-            Driver.FindElement(By.XPath("//input[@id='searchText']")).Click();
+            Driver.FindElementXPath("//input[@id='searchText']").Click();
         }
 
         public void IsVisibleSearchBarButton()
         {
-            Assert.IsTrue(Driver.FindElement(By.XPath("//input[@id='searchText']")).Displayed, "Search Bar Button not found!");
+            Assert.IsTrue(Driver.FindElementXPath("//input[@id='searchText']").Displayed, "Search Bar Button not found!");
         }
 
         public void IsVisibleSearchBarCloseButton()
         {
-            Assert.IsTrue(Driver.FindElement(By.XPath("//span[@id='clearSearchPhrase']")).Displayed, "Search Bar Close Button not found!");
+            Assert.IsTrue(Driver.FindElementXPath("//span[@id='clearSearchPhrase']").Displayed, "Search Bar Close Button not found!");
         }
 
         public void IsVisibleAds()

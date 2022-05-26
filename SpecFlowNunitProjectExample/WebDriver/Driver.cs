@@ -28,9 +28,14 @@ namespace SpecFlowNunitProjectExample.WebDriver
             driver.Quit();
         }
 
-        public static IWebElement FindElement(By by)
+        public static IWebElement FindElementXPath(string xPath)
         {
-            return driver.FindElement(by);
+            return driver.FindElement(By.XPath(xPath));
+        }
+        
+        public static IWebElement FindElementId(string id)
+        {
+            return driver.FindElement(By.Id(id));
         }
 
         public static void ForceWait(int second)
