@@ -4,6 +4,7 @@ using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 using System;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace SpecFlowNunitProjectExample.WebDriver
 {
@@ -31,12 +32,23 @@ namespace SpecFlowNunitProjectExample.WebDriver
         {
             return driver.FindElement(by);
         }
-      
+
+        public static void ForceWait(int second)
+        {
+            Thread.Sleep(second * 1000);
+        }
         public static IReadOnlyCollection<IWebElement> FindElements(By by)
         {
             return driver.FindElements(by);
         }
-      
+        
+        public static bool IsElementClickable(By xpath,int second)
+        {
+            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(second));
+            wait.Until(ExpectedConditions.ElementToBeClickable(xpath));
+            return true;
+        }
+
 
         public static string ElementIsVisible(By xpath, int second)
         {
@@ -66,6 +78,8 @@ namespace SpecFlowNunitProjectExample.WebDriver
             {
                 return e.Message;
             }
+
+
 
         }
     }
