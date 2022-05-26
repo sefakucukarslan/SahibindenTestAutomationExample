@@ -68,24 +68,6 @@ namespace SpecFlowNunitProjectExample.WebDriver
                 return e.Message;
             }
 
-        }
-
-        public static string ElementIsVisible(By xpath,string text, int second)
-        {
-           IWebElement element =  FindElement(xpath);
-            try
-            {
-                wait = new WebDriverWait(driver, TimeSpan.FromSeconds(second));
-                wait.Until(ExpectedConditions.TextToBePresentInElement(element, text));
-                return null;
-            }
-            catch (Exception e)
-            {
-                return e.Message;
-            }
-
-
-
-        }
+        }        
     }
 }
